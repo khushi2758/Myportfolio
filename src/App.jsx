@@ -3,9 +3,12 @@ import "react-toastify/dist/ReactToastify.css";
 import About from "./components/About";
 import { Icon } from "@iconify/react";
 import Projects from "./components/Projects";
+import Contract from "./components/contract";
+import Footer from "./components/Footer";
+import { motion } from "framer-motion";
 function App() {
   return (
-    <div className="bg-[#B18B8B] text-white min-h-screen pt-10 border-t border-white/5  font-mono relative overflow-hidden">
+    <div className="bg-[#B18B8B] text-white min-h-screen pt-10 border-t border-white/5  font-mono relative overflow-hidden ">
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none uppercase select-none z-0 top-0">
         <h1 className="text-[30vw] font-black text-white leading-none tracking-tighter">
           KHUSHI
@@ -24,13 +27,18 @@ function App() {
               ROLE: FRONTEND DEV
             </p>
             <p className="text-[10px] text-amber-500 tracking-widest">
-              SYS_ID: USER_7G_PRN
+              ABOUT
             </p>
           </div>
         </div>
         {}
-        <div className="flex flex-col lg:flex-row items-start gap-16 mb-24 ">
-          <div className="w-full  lg:w-[480px] relative group cursor-crosshair ">
+        <div className="flex flex-col lg:flex-row items-start gap-16 mb-24 "
+         >
+          <motion.div className="w-full  lg:w-[480px] relative group cursor-crosshair "
+            initial={{ x: -100, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}>
             <div className="z-10 relative inset-10 ">
               <img
                 className="w-full h-auto object-cover      "
@@ -46,9 +54,13 @@ function App() {
                 FRONTEND DEVELOPER
               </div>
             </div>
-          </div>
+          </motion.div>
           {}
-          <div className="flex-1 space-y-12 pt-10">
+          <motion.div className="flex-1 space-y-12 pt-10"
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}>
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <div>
@@ -75,7 +87,7 @@ function App() {
                 <p className="text-[#6a6b73] border-[#672323] border-2  text-sm leading-relaxed tracking-wider normal-case font-sans    pl-6  bg-[#F4E1E0]/80 py-4 shadow-2xl">
                   "I create immersive frontend experiences where modern development meets aesthetic design. Passionate about React, Next.js, and interactive UI engineering, I craft sleek digital products while exploring modern technologies and impactful user-centered experiences."
                 </p>
-                <div className="absolute bg-transparent backdrop-invert-25   p-2 h-7  w-30 inset-10 z-20  shadow-2xl left-[70%]  top-55 rotate-[-30deg] translate-y-[-10%] md:top-20 lg:left-[88%]"></div>
+                <div className="absolute bg-transparent backdrop-invert-25   p-2 h-7  w-30 inset-10 z-20  shadow-2xl left-[67%]  top-50 rotate-[-30deg] translate-y-[-25%] md:translate-y-[-20%] md:top-20 lg:left-[88%]"></div>
               </div>
             </div>
             {}
@@ -218,13 +230,15 @@ function App() {
                </div> 
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {}
         
       </div>
       <Projects />
+      <Contract />
+      <Footer/>
     </div>
   );
 }

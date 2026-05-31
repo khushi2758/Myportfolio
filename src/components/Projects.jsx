@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-
+import {motion} from "framer-motion";
 const projects = [
   {
     period: "2026",
@@ -81,11 +81,15 @@ export default function WorkHistory() {
   }, [dragging]);
 
   return (
-    <div className="min-h-screen p-5  md:p-20 py-5 font-sans  bg-[#885e5ecd] -top-50  md:top-0 relative border-t-1 border-b-1 border-[#4a0505]">
+    <div className="min-h-screen p-5  md:p-20 py-5 font-sans  bg-[#885e5ecd] -top-50  md:top-0 relative border-t-1 border-b-1 border-[#4a0505] " id="projects">
       {/* 
     Title */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16  ">
-        <div className="select-none">
+        <motion.div className="select-none"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}>
           <h1 className="text-center text-3xl md:text-7xl font-black tracking-widest uppercase text-white mb-10 underline underline-offset-8 decoration-4 decoration-[#4a0505]">
             MY<span className="text-[#4a0505]">PROJECTS</span>
           </h1>
@@ -108,13 +112,13 @@ export default function WorkHistory() {
 
                 {/* Entries */}
                 <div className="flex-1 pl-7 flex flex-col gap-6 pb-20">
-                  {projects.map((job, i) => (
+                  {projects.map((pro, i) => (
                     <div key={i} className="flex flex-col gap-2">
                       {/* Dot + period */}
                       <div className="flex items-center gap-3 -ml-7">
                         <div className="w-3.5 h-3.5 rounded-full flex-shrink-0 z-20 bg-amber-950 " />
                         <span className="text-[#4a0505] text-xs font-bold italic tracking-widest uppercase">
-                          {job.period}
+                          {pro.period}
                         </span>
                       </div>
 
@@ -122,14 +126,14 @@ export default function WorkHistory() {
                       <div className="bg-[#e3cdcd] rounded-xl border border-[#253345] px-5 py-5">
                         <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                           <span className="text-[#7F6269] text-base font-black tracking-wide uppercase">
-                            {job.name}
+                            {pro.name}
                           </span>
                           <span className="bg-[#4a0505] text-white text-[11px] font-bold tracking-wide uppercase px-4 py-1.5 rounded-full whitespace-nowrap">
-                            {job.role}
+                            {pro.role}
                           </span>
                         </div>
                         <p className="text-[#7a8fa8] text-sm leading-relaxed m-0">
-                          {job.description}
+                          {pro.description}
                         </p>
                       </div>
                     </div>
@@ -156,8 +160,12 @@ export default function WorkHistory() {
               />
             </div>
           </div>
-        </div>
-        <div className="w-full  lg:w-[580px] relative group cursor-crosshair -top-5    p-3  ">
+        </motion.div>
+        <motion.div className="w-full  lg:w-[580px] relative group cursor-crosshair -top-5    p-3  "
+           initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.50] pointer-events-none select-none z-0 h-67 md:h-130 w-auto md:pt-10  ">
             <img
               src="/grd.jpg"
@@ -179,7 +187,7 @@ export default function WorkHistory() {
             </button>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
