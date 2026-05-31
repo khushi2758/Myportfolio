@@ -53,7 +53,7 @@ const Contact = () => {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}>
-                    <div className="relative inset-0 z-30 top-0 left-50 translate-y-[-80%] md:translate-y-[-60%]  md:left-60  ">
+                    <div className="relative inset-0 z-30 top-0 left-65 translate-y-[-80%] md:translate-y-[-60%]  md:left-60  ">
                     <img
                       src="/pin.png"
                       alt=""
@@ -70,9 +70,9 @@ const Contact = () => {
             {/* Email */}
             <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=Kbera5631@gmail.com" target="_blank" rel="noreferrer"
-              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 group"
+              className="flex flex-col-2  items-center gap-5 md:gap-4   group"
             >
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-[#742222] flex items-center justify-center">
+              <div className="md:w-14 md:h-14 w-10 h-10 rounded-md md:rounded-xl bg-[#742222] flex items-center justify-center">
                 <FaEnvelope className="text-white text-2xl" />
               </div>
 
@@ -86,9 +86,9 @@ const Contact = () => {
               href="https://github.com/khushi2758"
               target="_blank"
               rel="noreferrer"
-              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 group"
+               className="flex flex-col-2  items-center gap-5 md:gap-4   group"
             >
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-[#742222] flex items-center justify-center">
+              <div className="md:w-14 md:h-14 w-10 h-10 rounded-md md:rounded-xl bg-[#742222] flex items-center justify-center">
                 <FaGithub className="text-white text-2xl" />
               </div>
 
@@ -102,9 +102,9 @@ const Contact = () => {
               href="https://www.linkedin.com/in/khushi-bera-49baa6282/"
               target="_blank"
               rel="noreferrer"
-              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 group"
+              className="flex flex-col-2  items-center gap-5 md:gap-4   group"
             >
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-[#742222] flex items-center justify-center">
+              <div className="md:w-14 md:h-14 w-15 h-10 rounded-md md:rounded-xl bg-[#742222] flex items-center justify-center">
                 <FaLinkedin className="text-white text-2xl" />
               </div>
 
@@ -120,7 +120,7 @@ const Contact = () => {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}>
-                    <div className="relative inset-0 z-30 top-0 left-50 translate-y-[-98%] md:translate-y-[-60%]  md:left-50   ">
+                    <div className="relative inset-0 z-30 top-0 left-65 translate-y-[-80%] md:translate-y-[-60%]  md:left-50   ">
                     <img
                       src="/pin.png"
                       alt=""
